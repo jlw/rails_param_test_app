@@ -21,9 +21,15 @@ RSpec.describe "/bars" do
     expect(body).to eq(search_params: { foo: 'fff', user_id: nil })
   end
 
-  it "rejects searches with an empty string user ID" do
-    expect { post '/bars/search', params: { foo: 'fff', user_id: '' }, as: :json }
-      .to raise_exception RailsParam::InvalidParameterError, "'' is not a valid Integer"
+  it "DOES NOT reject searches with an empty string user ID" do
+    post '/bars/search', params: { foo: 'fff', user_id: '' }, as: :json
+
+    expect(body).to eq(search_params: { foo: 'fff', user_id: nil })
+  end
+
+  it "rejects searches with a string user ID" do
+    expect { post '/bars/search', params: { foo: 'fff', user_id: 'abc' }, as: :json }
+      .to raise_exception RailsParam::InvalidParameterError, "'abc' is not a valid Integer"
   end
 
   it "rejects searches with a string user ID" do

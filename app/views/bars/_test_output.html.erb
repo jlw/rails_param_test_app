@@ -1,54 +1,21 @@
 
 bars search
 <span class="f2">  handles GET searches</span>
-<span class="f3">  handles GET searches without a user ID (PENDING: not handled by rails_param v1.3.1)
-</span><span class="f2">  fails on GET searches without a user ID</span>
+<span class="f2">  handles GET searches without a user ID</span>
+<span class="f2">  fails on GET searches without a user ID</span>
 <span class="f2">  handles POST searches</span>
-<span class="f3">  handles POST searches without a user ID (PENDING: not handled by rails_param v1.3.1)
-</span><span class="f2">  fails on POST searches without a user ID</span>
+<span class="f2">  handles POST searches without a user ID</span>
+<span class="f2">  fails on POST searches without a user ID</span>
 
 /bars
 <span class="f2">  handles searches with both options</span>
 <span class="f2">  handles searches without a user ID</span>
 <span class="f2">  handles searches without a null user ID</span>
-<span class="f2">  rejects searches with an empty string user ID</span>
+<span class="f2">  DOES NOT reject searches with an empty string user ID</span>
+<span class="f2">  rejects searches with a string user ID</span>
 <span class="f2">  rejects searches with a string user ID</span>
 <span class="f2">  handles searches with just a user ID</span>
 
-Pending: (Failures listed here are expected and do not affect your suite's status)
-
-  1) bars search handles GET searches without a user ID
-     <span class="f6"># not handled by rails_param v1.3.1</span>
-     <span class="f3">Failure/Error: param! :user_id, Integer</span>
-     
-     <span class="f3">RailsParam::InvalidParameterError:</span>
-     <span class="f3">  '' is not a valid Integer</span>
-     <span class="f6"># ./app/controllers/bars_controller.rb:18:in `search_params'</span>
-     <span class="f6"># ./app/controllers/bars_controller.rb:5:in `search'</span>
-     <span class="f6"># ./spec/features/bars_spec.rb:22:in `block (3 levels) in &lt;top (required)&gt;'</span>
-     <span class="f6"># ./spec/features/bars_spec.rb:20:in `block (2 levels) in &lt;top (required)&gt;'</span>
-     <span class="f6"># ------------------</span>
-     <span class="f6"># --- Caused by: ---</span>
-     <span class="f6"># ArgumentError:</span>
-     <span class="f6">#   invalid value for Integer(): &quot;&quot;</span>
-     <span class="f6">#   ./app/controllers/bars_controller.rb:18:in `search_params'</span>
-
-  2) bars search handles POST searches without a user ID
-     <span class="f6"># not handled by rails_param v1.3.1</span>
-     <span class="f3">Failure/Error: param! :user_id, Integer</span>
-     
-     <span class="f3">RailsParam::InvalidParameterError:</span>
-     <span class="f3">  '' is not a valid Integer</span>
-     <span class="f6"># ./app/controllers/bars_controller.rb:18:in `search_params'</span>
-     <span class="f6"># ./app/controllers/bars_controller.rb:5:in `search'</span>
-     <span class="f6"># ./spec/features/bars_spec.rb:55:in `block (3 levels) in &lt;top (required)&gt;'</span>
-     <span class="f6"># ./spec/features/bars_spec.rb:53:in `block (2 levels) in &lt;top (required)&gt;'</span>
-     <span class="f6"># ------------------</span>
-     <span class="f6"># --- Caused by: ---</span>
-     <span class="f6"># ArgumentError:</span>
-     <span class="f6">#   invalid value for Integer(): &quot;&quot;</span>
-     <span class="f6">#   ./app/controllers/bars_controller.rb:18:in `search_params'</span>
-
-Finished in 0.06814 seconds (files took 0.64709 seconds to load)
-<span class="f3">12 examples, 0 failures, 2 pending</span>
+Finished in 0.12059 seconds (files took 0.64364 seconds to load)
+<span class="f2">13 examples, 0 failures</span>
 
