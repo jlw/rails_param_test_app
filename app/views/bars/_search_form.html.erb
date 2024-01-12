@@ -1,0 +1,17 @@
+<form action="/bars/search" method="<%= form_method %>">
+<% if form_method == :post %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<% end %>
+  <div class="mb-3">
+    <%= label_tag :foo, "Foo", class: "form-label" %>
+    <%= text_field_tag :foo, @foo, class: 'form-control', placeholder: "Search…" %>
+  </div>
+  <div class="mb-3">
+    <%= label_tag :user_id, "User", class: "form-label" %>
+    <%= select_tag :user_id,
+                   options_for_select({ 'User 1' => 1, 'User 2' => 2 }, @user_id),
+                   class: 'form-select',
+                   include_blank: true %>
+  </div>
+  <button type="submit" class="btn btn-primary">Search</button>
+</form>
