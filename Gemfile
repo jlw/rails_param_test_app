@@ -6,7 +6,7 @@ ruby "3.1.4"
 gem "bootsnap", require: false
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.8"
-gem "rails_param"
+gem "rails_param", git: "https://github.com/jlw/rails_param.git", branch: "allow-blank-non-string-non-required"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
