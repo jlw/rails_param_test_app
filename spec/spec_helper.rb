@@ -31,6 +31,4 @@ RSpec.configure do |config|
 
   config.default_formatter = "doc"
   config.disable_monkey_patching!
-  config.order = :random
-  Kernel.srand config.seed
 end
