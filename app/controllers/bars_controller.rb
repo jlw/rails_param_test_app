@@ -14,8 +14,8 @@ class BarsController < ApplicationController
   private
 
   def search_params
-    param! :foo, String
-    param! :user_id, Integer
+    param! :foo, String, transform: :presence
+    param! :user_id, Integer, transform: :presence
 
     params.permit(:foo, :user_id)
   end

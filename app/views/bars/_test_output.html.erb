@@ -19,7 +19,7 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
   1) bars search handles GET searches without a user ID
      <span class="f6"># not handled by rails_param v1.3.1</span>
-     <span class="f3">Failure/Error: param! :user_id, Integer</span>
+     <span class="f3">Failure/Error: param! :user_id, Integer, transform: :presence</span>
      
      <span class="f3">RailsParam::InvalidParameterError:</span>
      <span class="f3">  '' is not a valid Integer</span>
@@ -35,7 +35,7 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
 
   2) bars search handles POST searches without a user ID
      <span class="f6"># not handled by rails_param v1.3.1</span>
-     <span class="f3">Failure/Error: param! :user_id, Integer</span>
+     <span class="f3">Failure/Error: param! :user_id, Integer, transform: :presence</span>
      
      <span class="f3">RailsParam::InvalidParameterError:</span>
      <span class="f3">  '' is not a valid Integer</span>
@@ -49,6 +49,6 @@ Pending: (Failures listed here are expected and do not affect your suite's statu
      <span class="f6">#   invalid value for Integer(): &quot;&quot;</span>
      <span class="f6">#   ./app/controllers/bars_controller.rb:18:in `search_params'</span>
 
-Finished in 0.06814 seconds (files took 0.64709 seconds to load)
+Finished in 0.09931 seconds (files took 0.6014 seconds to load)
 <span class="f3">12 examples, 0 failures, 2 pending</span>
 
